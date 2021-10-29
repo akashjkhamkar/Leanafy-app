@@ -1,28 +1,84 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="megacontainer">
+    <div id="subcontainer">
+      <TopBar/>
+      <Hello/>
+
+      <div id="pageContainer">
+        <Inbound v-if="Inbound"/>
+        <Unbound v-if="!Inbound"/>
+      </div>
+
+      <Footer v-on:isInbound="changePage"/>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import TopBar from "./components/TopBar.vue"
+  import Hello from "./components/Hello.vue"
+  import Inbound from "./components/InboundPage.vue"
+  import Unbound from "./components/UnboundPage.vue"
+  import Footer from "./components/Footer.vue"
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default {
+    name: 'App',
+    components: {
+      TopBar,
+      Hello,
+      Footer,
+      Inbound,
+      Unbound
+    },
+    data: function() {
+      return {
+        Inbound: true
+      }
+    },
+    methods: {
+      changePage: function(){
+        console.log("changing")
+        this.Inbound = !this.Inbound;
+      }
+    }
   }
-}
+
 </script>
 
+<style scoped>
+  #megacontainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  #subcontainer{
+    width: 100%;
+    min-height: 100vh;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 60px;
+  }
+</style>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');  html {
+    font-family: 'Work Sans', sans-serif;
+  }
+
+  #pageContainer{
+      margin-top: 40px;
+  }
+
+
+</style>
+
+<style>
+  button{
+    cursor: pointer;
+  }
 </style>
