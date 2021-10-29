@@ -25,12 +25,4 @@
         width: 100%;
         border-radius: 10px;
     }
-
-    #ContentTitle{
-        width: fit-content;
-        padding-bottom: 5px;
-        border-bottom: 5px solid rgb(0, 102, 255);
-        border-radius: 3px;
-    }
-
 </style>

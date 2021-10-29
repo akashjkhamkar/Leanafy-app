@@ -1,6 +1,10 @@
 <template>
     <div id="BoxPage">
-        <img src="/images/darkbox.png" alt="">
+        <span id="ContentTitle">
+            Package Managment
+        </span>
+        <img src="/images/package.jpg" alt="img">
+        <h3>Package Managment console</h3>
     </div>
 </template>
 
@@ -15,6 +19,5 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
     }
 </style>

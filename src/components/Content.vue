@@ -79,9 +79,4 @@
 </script>
 
 <style scoped>
-    #ContentTitle{
-        padding-bottom: 5px;
-        border-bottom: 5px solid rgb(0, 102, 255);
-        border-radius: 3px;
-    }
 </style>

@@ -4,7 +4,7 @@
             Akash Khamkar
         </h1>
         <span id="Subtitle">
-            just a dude
+            The coder dude
         </span>
     </div>
 </template>

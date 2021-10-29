@@ -48,7 +48,7 @@
           if(this.activePage === 1){
             return "Inbound"
           }else if(this.activePage === 2){
-            return "Box"
+            return "Packages"
           }else if(this.activePage === 3){
             return "Outbound"
           }else{
@@ -98,5 +98,13 @@
 <style>
   button{
     cursor: pointer;
+  }
+
+
+  #ContentTitle{
+      width: fit-content;
+      padding-bottom: 5px;
+      border-bottom: 5px solid rgb(0, 102, 255);
+      border-radius: 3px;
   }
 </style>
