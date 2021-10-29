@@ -120,7 +120,8 @@
 </style>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');  html {
+  @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');  
+  html {
     font-family: 'Work Sans', sans-serif;
   }
 
@@ -140,5 +141,10 @@
       padding-bottom: 5px;
       border-bottom: 5px solid rgb(0, 102, 255);
       border-radius: 3px;
+  }
+
+  div{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
   }
 </style>
