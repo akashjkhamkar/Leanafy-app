@@ -6,7 +6,7 @@
 
       <div id="pageContainer">
         <Inbound v-if="activePage === 1"/>
-        <Box v-if="activePage === 2"/>
+        <Box v-if="activePage === 2" v-bind:pokemons="pokemons"/>
         <Unbound v-if="activePage === 3"/>
       </div>
 
@@ -16,6 +16,8 @@
 </template>
 
 <script>
+  import axios from 'axios';
+
   import TopBar from "./components/TopBar.vue"
   import Hello from "./components/Hello.vue"
   import Inbound from "./components/InboundPage.vue"
@@ -35,7 +37,8 @@
     },
     data: function() {
       return {
-        activePage: 1
+        activePage: 1,
+        pokemons: []
       }
     },
     methods: {
@@ -43,10 +46,46 @@
         this.activePage = id;
       }
     },
+    mounted () {
+      axios.get("https://pokeapi.co/api/v2/pokemon/")
+      .then(res => {
+        
+        // get pokemon list
+        const pokelinks = res.data.results;
+        return pokelinks;
+      })
+      .then(pokelinks => {
+        pokelinks.map(item => {
+          
+          // now fetch indivisual pokemon
+          axios.get(item.url)
+          .then(res => {
+              const data = res.data;
+              const pokemon = {
+                name: data.name,
+                img: data.sprites.front_default,
+                types: data.types.map((obj, index) => {
+                    return {
+                      id : index,
+                      name : obj.type.name
+                    }
+                }),
+                id: data.id
+              }
+
+              // add to the state
+              this.pokemons.push(pokemon)
+          })
+        })
+      })
+      .catch(e => {
+        alert("something went wrong", e)
+      })
+    },
     computed: {
         getActivePage() {
           if(this.activePage === 1){
-            return "Inbound"
+              return "Inbound"
           }else if(this.activePage === 2){
             return "Packages"
           }else if(this.activePage === 3){
