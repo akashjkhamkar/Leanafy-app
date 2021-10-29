@@ -1,7 +1,7 @@
 <template>
     <div id="TopBar">
         <div id="TopBarCurrentPage">
-            Inbound
+            {{current[0]}}
         </div>
         <div id="TopBarRightSection">
             <div>
@@ -16,7 +16,8 @@
 
 <script>
     export default {
-        name: "TopBar"
+        name: "TopBar",
+        props: ["current"]
     }
 </script>
 

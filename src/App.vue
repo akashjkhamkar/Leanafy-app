@@ -1,7 +1,7 @@
 <template>
   <div id="megacontainer">
     <div id="subcontainer">
-      <TopBar/>
+      <TopBar v-bind:current="[Inbound ? 'Inbound' : 'Unbound']"/>
       <Hello/>
 
       <div id="pageContainer">
@@ -37,7 +37,6 @@
     },
     methods: {
       changePage: function(){
-        console.log("changing")
         this.Inbound = !this.Inbound;
       }
     }
