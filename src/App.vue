@@ -92,14 +92,9 @@
       flex-direction: column;
   }
 
-
-</style>
-
-<style>
   button{
     cursor: pointer;
   }
-
 
   #ContentTitle{
       width: fit-content;
