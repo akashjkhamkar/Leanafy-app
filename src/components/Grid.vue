@@ -45,15 +45,15 @@
         grid-gap: 10px;
         grid-template-rows: auto auto;
         justify-items: center;
-        width: fit-content;
+        width: 290px;
         grid-auto-flow: column;
         overflow-x: scroll;
         border-radius: 10px;
     }
 
     .GridItem{
-        width: 120px;
-        max-height: 150px;
+        width: 100px;
+        height: 100px;
         border-radius: 10px;
         padding: 20px;
         background: rgb(235, 235, 235);
