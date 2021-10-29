@@ -9,7 +9,7 @@
             id="Pokemon"
             v-for="pokemon in pokemons"
             v-bind:key="pokemon.id">
-                <div>
+                <div id="pokeProfile">
                     <h1>{{pokemon.name}}</h1>
                     <img v-bind:src="pokemon.img" alt="">
                 </div>
@@ -64,12 +64,17 @@
 
     ul {
         padding: 0;
+        list-style: none;
     }
     
     #types{
         display: flex;
         flex-direction: column;
-        justify-content: center ;
-        align-items: center;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    #pokeProfile, #types {
     }
 </style>
