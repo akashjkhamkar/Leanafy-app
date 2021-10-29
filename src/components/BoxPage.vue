@@ -1,7 +1,7 @@
 <template>
     <div id="BoxPage">
         <span id="ContentTitle">
-            Pokemon Managment
+            Pokemon management
         </span>
 
         <div id="Pokemons">
@@ -15,7 +15,7 @@
                 </div>
                 
                 <div id="types">
-                    <h3>types</h3>
+                    <h3>Types</h3>
                     <ul>
                         <li 
                         v-for="ability in pokemon.types"

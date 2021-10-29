@@ -1,7 +1,7 @@
 <template>
     <div id="Content">
         <span id="ContentTitle">
-            Inbound Managment
+            Inbound Management
         </span>
         <Grid v-bind:GridItems="GridItems"/>
     </div>
