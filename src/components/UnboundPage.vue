@@ -4,7 +4,7 @@
             Unbound Managment
         </span>
         <img src="/images/boat.jpg" alt="">
-        <h3>Unbound stuff</h3>
+        <h3>Unbound Managment Console</h3>
     </div>
 </template>
 

@@ -48,11 +48,11 @@
         width: fit-content;
         grid-auto-flow: column;
         overflow-x: scroll;
+        border-radius: 10px;
     }
 
     .GridItem{
         width: 120px;
-        max-width: 150px;
         max-height: 150px;
         border-radius: 10px;
         padding: 20px;

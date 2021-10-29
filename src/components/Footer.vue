@@ -7,38 +7,18 @@
             text="Inbound"/>
 
             <IconButton 
-            img="/images/box.png"/>
-
-            <PillButton 
             v-bind:isactive="activebutton === 2 ? true : false" 
             v-on:click.native="setactive(2)"
+            lightimg="/images/lightbox.png"
+            darkimg="/images/darkbox.png"/>
+
+            <PillButton 
+            v-bind:isactive="activebutton === 3 ? true : false" 
+            v-on:click.native="setactive(3)"
             text="Outbound"/>
         </div>
     </footer>
 </template>
-
-<style scoped>
-    footer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        max-width: 100%;
-        padding: 10px;
-        background: white;
-    }
-
-    #footerbuttons{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 100%;
-        max-width: 400px;
-    }
-</style>
 
 <script>
     import PillButton from "./PillButton.vue"
@@ -52,8 +32,12 @@
         },
         methods: {
             setactive: function(id){
+                if(this.activebutton === id){
+                    return;
+                }
+
                 this.activebutton = id;
-                this.$emit("isInbound", id === 1)
+                this.$emit("isInbound", id)
             }
         },
         data: function() {
@@ -64,5 +48,26 @@
     }
 </script>
 
+<style scoped>
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-width: 100%;
+        padding: 10px;
+        background: white;
+        border-top: 1px rgb(235, 235, 235) solid;
+    }
 
-
+    #footerbuttons{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        max-width: 400px;
+    }
+</style>

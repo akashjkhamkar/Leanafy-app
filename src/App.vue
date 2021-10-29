@@ -1,15 +1,15 @@
 <template>
   <div id="megacontainer">
     <div id="subcontainer">
-      <TopBar v-bind:current="[Inbound ? 'Inbound' : 'Unbound']"/>
+      <TopBar v-bind:current="getActivePage"/>
       <Hello/>
 
       <div id="pageContainer">
-        <Inbound v-if="Inbound"/>
-        <Unbound v-if="!Inbound"/>
+        <Inbound v-if="activePage === 1"/>
+        <Unbound v-if="activePage === 3"/>
       </div>
 
-      <Footer v-on:isInbound="changePage"/>
+      <Footer v-on:isInbound="changePage($event)"/>
     </div>
   </div>
 </template>
@@ -32,12 +32,25 @@
     },
     data: function() {
       return {
-        Inbound: true
+        activePage: 1
       }
     },
     methods: {
-      changePage: function(){
-        this.Inbound = !this.Inbound;
+      changePage: function(id){
+        this.activePage = id;
+      }
+    },
+    computed: {
+        getActivePage() {
+          if(this.activePage === 1){
+            return "Inbound"
+          }else if(this.activePage === 2){
+            return "Box"
+          }else if(this.activePage === 3){
+            return "Outbound"
+          }else{
+            return "null"
+          }
       }
     }
   }

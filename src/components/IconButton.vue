@@ -1,13 +1,13 @@
 <template>
-    <button>
-        <img class="icon" v-bind:src="img" alt="icon">
+    <button v-bind:class="{active: isactive}">
+        <img class="icon" v-bind:src="isactive ? lightimg : darkimg" alt="icon">
     </button>
 </template>
 
 <script>
     export default {
         name: "IconButton",
-        props: ["img"]
+        props: ["lightimg", "darkimg", "isactive"]
     }
 </script>
 
@@ -20,10 +20,15 @@
         justify-content: center;
         border-radius: 50%;
         border-style: none;
-        background: black;
+        background: transparent;
     }
 
     .icon{
         width: 30px;
+    }
+
+    .active{
+        background: rgb(0, 102, 255);
+        color: white;
     }
 </style>

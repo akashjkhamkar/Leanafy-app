@@ -22,7 +22,7 @@
         padding: 15px;
         border-radius: 50px;
         background: transparent;
-        color: rgb(104, 104, 104);
+        font-weight: 700;
     }
 
     .active{

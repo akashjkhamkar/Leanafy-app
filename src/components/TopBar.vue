@@ -1,7 +1,7 @@
 <template>
     <div id="TopBar">
         <div id="TopBarCurrentPage">
-            {{current[0]}}
+            {{current}}
         </div>
         <div id="TopBarRightSection">
             <div>
