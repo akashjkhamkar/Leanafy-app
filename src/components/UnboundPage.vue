@@ -1,10 +1,10 @@
 <template>
     <div id="UnboundPage">
         <span id="ContentTitle">
-            Unbound Managment
+            Outbound Managment
         </span>
         <img src="/images/boat.jpg" alt="">
-        <h3>Unbound Managment Console</h3>
+        <h3>Outbound Managment Console</h3>
     </div>
 </template>
 

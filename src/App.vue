@@ -6,6 +6,7 @@
 
       <div id="pageContainer">
         <Inbound v-if="activePage === 1"/>
+        <Box v-if="activePage === 2"/>
         <Unbound v-if="activePage === 3"/>
       </div>
 
@@ -19,6 +20,7 @@
   import Hello from "./components/Hello.vue"
   import Inbound from "./components/InboundPage.vue"
   import Unbound from "./components/UnboundPage.vue"
+  import Box from "./components/BoxPage.vue"
   import Footer from "./components/Footer.vue"
 
   export default {
@@ -28,7 +30,8 @@
       Hello,
       Footer,
       Inbound,
-      Unbound
+      Unbound,
+      Box
     },
     data: function() {
       return {
@@ -84,6 +87,9 @@
 
   #pageContainer{
       margin-top: 40px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
   }
 
 
