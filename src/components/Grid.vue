@@ -49,6 +49,7 @@
         grid-auto-flow: column;
         overflow-x: scroll;
         border-radius: 10px;
+        padding-bottom: 20px;
     }
 
     .GridItem{
@@ -67,4 +68,19 @@
     h3{
         margin-top: 0;
     }
+
+    #grid::-webkit-scrollbar {
+        height: 5px;
+        width: 50px;
+    }
+    
+    #grid::-webkit-scrollbar-track {
+        background-color: rgb(233, 233, 233);
+    }
+
+    #grid::-webkit-scrollbar-thumb {
+        background-color: #0066ff;
+        outline: 1px solid slategrey;
+    }
+
 </style>
