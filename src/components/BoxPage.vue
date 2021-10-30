@@ -1,13 +1,15 @@
 <template>
     <div id="BoxPage">
         <span id="ContentTitle">
-            Pokemon management
+            Pokemon Management
         </span>
 
+        <h2>Search a Pokemon</h2>
+        <input placeholder="Search" type="text" v-model="input">
         <div id="Pokemons">
             <div 
             id="Pokemon"
-            v-for="pokemon in pokemons"
+            v-for="pokemon in search"
             v-bind:key="pokemon.id">
                 <div id="pokeProfile">
                     <h1>{{pokemon.name}}</h1>
@@ -24,16 +26,28 @@
                         </li>
                     </ul>
                 </div>
+
             </div>
         </div>
-
     </div>
 </template>
 
 <script>
     export default {
         name: "BoxPage",
-        props: ["pokemons"]
+        props: ["pokemons"],
+        data: function () {
+            return {
+                input: ""
+            }
+        },
+        computed: {
+            search: function () {
+                return this.pokemons.filter(
+                    pokemon => pokemon.name.includes(this.input)
+                )
+            }
+        }
     }
 </script>
 
@@ -42,6 +56,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
 
     #Pokemons{
@@ -75,6 +90,16 @@
         padding: 10px;
     }
 
-    #pokeProfile, #types {
+    input{
+        padding: 10px;
+        border: 1px black solid;
+        border-radius: 10px;
+        width: 80%;
+
+    }
+
+    input:focus { 
+        outline: none !important;
+        border-color: #007bff;
     }
 </style>

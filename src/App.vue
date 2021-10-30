@@ -47,11 +47,12 @@
       }
     },
     mounted () {
-      axios.get("https://pokeapi.co/api/v2/pokemon/")
+      axios.get("https://pokeapi.co/api/v2/pokemon?limit=80")
       .then(res => {
         
         // get pokemon list
         const pokelinks = res.data.results;
+        console.log(pokelinks)
         return pokelinks;
       })
       .then(pokelinks => {

@@ -79,4 +79,9 @@
 </script>
 
 <style scoped>
+    #Content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 </style>

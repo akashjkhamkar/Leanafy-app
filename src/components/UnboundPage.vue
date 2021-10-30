@@ -1,28 +1,80 @@
 <template>
     <div id="UnboundPage">
         <span id="ContentTitle">
-            Outbound Management
+            Boredom Management
         </span>
-        <img src="/images/boat.jpg" alt="">
-        <h3>Outbound Management Console</h3>
+
+        <div id="text">
+            <h2>Bored ?</h2>
+        </div>
+        <PillButton
+        text="Get a suggestion"
+        isactive="true"
+        v-on:click.native="getSuggestion"/>
+
+        <h3>{{loading ? 'Loading ... ' : suggestion}}</h3>
     </div>
 </template>
 
 <script>
+    import axios from "axios"
+    import PillButton from "./PillButton.vue"
     export default {
-        name: "UnboundPage"
+        name: "UnboundPage",
+        components: {
+            PillButton
+        },
+        data: function(){
+            return {
+                suggestion: "",
+                loading: false
+            }
+        },
+        methods: {
+            getSuggestion: function(){
+                this.loading = true;
+                axios.get("http://www.boredapi.com/api/activity/")
+                .then(res => {
+                    this.suggestion = res.data.activity;
+                    this.loading = false;
+                })
+                .catch(() => {
+                    alert("something went wrong")
+                })
+            }
+        }
     }
 </script>
 
 <style scoped>
     #UnboundPage{
+        flex-grow: 1;
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 10px;
     }
 
     img{
         width: 100%;
         border-radius: 10px;
+    }
+
+    button{
+        padding: 10px;
+        width: fit-content;
+    }
+
+    #text{
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 10px;
+    }
+
+    h3{
+        text-align: center;
+        margin-top: 10vh;
     }
 </style>
