@@ -33,7 +33,7 @@
         methods: {
             getSuggestion: function(){
                 this.loading = true;
-                axios.get("http://www.boredapi.com/api/activity/")
+                axios.get("https://www.boredapi.com/api/activity/")
                 .then(res => {
                     this.suggestion = res.data.activity;
                     this.loading = false;
