@@ -12,7 +12,10 @@
         isactive="true"
         v-on:click.native="getSuggestion"/>
 
-        <h3>{{loading ? 'Loading ... ' : suggestion}}</h3>
+        <img 
+        v-if="loading"
+        src="/images/loading.gif" alt="loading..."/>
+        <h3 v-else>{{suggestion}}</h3>
     </div>
 </template>
 

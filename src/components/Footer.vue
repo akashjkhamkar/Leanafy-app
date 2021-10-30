@@ -60,7 +60,7 @@
         max-width: 100%;
         padding: 10px;
         background: white;
-        border-top: 1px rgb(235, 235, 235) solid;
+        border-top: 1px rgb(182, 182, 182) solid;
     }
 
     #footerbuttons{
