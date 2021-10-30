@@ -48,7 +48,7 @@
         computed: {
             search: function () {
                 return this.pokemons.filter(
-                    pokemon => pokemon.name.includes(this.input)
+                    pokemon => pokemon.name.toLowerCase().includes(this.input.toLowerCase())
                 )
             }
         }
