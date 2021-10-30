@@ -5,7 +5,11 @@
         </span>
 
         <h2>Search a Pokemon</h2>
-        <input placeholder="Search" type="text" v-model="input">
+
+        <input placeholder="Search" type="text" 
+        :value="input"
+        @input="e => input = e.target.value">
+        
         <div id="Pokemons">
             <div 
             id="Pokemon"

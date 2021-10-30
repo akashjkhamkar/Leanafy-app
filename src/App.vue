@@ -52,7 +52,6 @@
         
         // get pokemon list
         const pokelinks = res.data.results;
-        console.log(pokelinks)
         return pokelinks;
       })
       .then(pokelinks => {
