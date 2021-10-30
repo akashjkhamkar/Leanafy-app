@@ -56,21 +56,21 @@
                     text: "Initiate",
                     boldtext: "Put it Away!",
                     img: "/images/forklift.png",
-                    color: "wheat",
+                    color: "yellow",
                     id: 6
                 },
                 {
                     text: "Filler",
                     boldtext: "Fill it Away!",
                     img: "/images/forklift.png",
-                    color: "wheat",
+                    color: "skyblue",
                     id: 7
                 },
                 {
                     text: "Filler",
                     boldtext: "Fill it Away!",
                     img: "/images/forklift.png",
-                    color: "wheat",
+                    color: "orange",
                     id: 8
                 }]
             }
